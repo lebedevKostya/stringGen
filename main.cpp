@@ -7,19 +7,28 @@
 
 using namespace std;
 
+QString strgen(int, int);
+
 int main(int argc, char* argv[])
 {
-    srand((unsigned)time(NULL));
-    char symb[] = "qwertyuiopasdfghjklzxcvbnmwe1234354353";
-    char n_name[20] = "1" ; // присвоил n_name какое то значение, ибо по какой то причине она забивалась мусором.
+  QString qwe = strgen(20,19);
+  qDebug() << qwe;
 
-    unsigned int j;
-    for (int i = 0; i < 8; i++)
-    {
-        j = rand()% 28;
-        n_name[i] = symb[j];
-    }
-    QString = n_name;
-    qDebug() << m_Size;
-    return 0;
+}
+
+QString strgen(int n, int m)
+{
+srand((unsigned)time(NULL));
+char symb[] = "QWERTYUIOPASDFGHJKLMNBVCXZqwertyuiopasdfghjklzxcvbnm123456789 ";
+char n_name[n] = "1";
+
+int j;
+for (int i = 0; i < m; i++)
+{
+    j = rand()%63;
+    n_name[i] = symb[j];
+}
+QString m_str = n_name;
+
+return m_str;
 }
